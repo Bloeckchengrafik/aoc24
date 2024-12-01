@@ -1,3 +1,4 @@
 /target
-/inputs
 .idea
+inputs/*
+!inputs/*_test.txt

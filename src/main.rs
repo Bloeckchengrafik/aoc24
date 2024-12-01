@@ -1,4 +1,4 @@
-use crate::runner::{Aoc, AocDay};
+use crate::runner::Aoc;
 use clap::Parser;
 
 mod runner;

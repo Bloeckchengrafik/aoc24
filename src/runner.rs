@@ -16,26 +16,37 @@ static ANSI_RED_MINUS: &str = "[\x1b[31m-\x1b[0m]";
 impl <T> Aoc for T where T: AocDay {
     fn run(content: String) {
         let day = T::new(content);
-        println!("Part 1: {}", day.part1());
-        println!("Part 2: {}", day.part2());
+        let part1start = std::time::Instant::now();
+        let part1 = day.part1();
+        let part1end = std::time::Instant::now();
+        let part2start = std::time::Instant::now();
+        let part2 = day.part2();
+        let part2end = std::time::Instant::now();
+
+        println!("{} Part 1: {} ({}ms)", ANSI_GREEN_PLUS, part1, part1end.duration_since(part1start).as_millis());
+        println!("{} Part 2: {} ({}ms)", ANSI_GREEN_PLUS, part2, part2end.duration_since(part2start).as_millis());
     }
 
     fn test(content: String) {
         let test_input = TestInput::new(content);
         let day = T::new(test_input.input);
+        let part1start = std::time::Instant::now();
         let part1 = day.part1();
+        let part1end = std::time::Instant::now();
+        let part2start = std::time::Instant::now();
         let part2 = day.part2();
+        let part2end = std::time::Instant::now();
 
         if part1 != test_input.expected1 {
             println!("{} FAIL 1: Expected: {}, got: {}", ANSI_RED_MINUS, test_input.expected1, part1);
         } else {
-            println!("{} PASS 1: {}", ANSI_GREEN_PLUS, part1);
+            println!("{} PASS 1: {} ({}ms)", ANSI_GREEN_PLUS, part1, part1end.duration_since(part1start).as_millis());
         }
 
         if part2 != test_input.expected2 {
             println!("{} FAIL 2: Expected: {}, got: {}", ANSI_RED_MINUS, test_input.expected2, part2);
         } else {
-            println!("{} PASS 2: {}", ANSI_GREEN_PLUS, part2);
+            println!("{} PASS 2: {} ({}ms)", ANSI_GREEN_PLUS, part2, part2end.duration_since(part2start).as_millis());
         }
     }
 }
@@ -62,14 +73,8 @@ impl TestInput {
 
         TestInput {
             input: input.trim().to_string(),
-            expected1,
-            expected2,
+            expected1: expected2,
+            expected2: expected1,
         }
-    }
-
-    pub fn debug(&self) {
-        println!("Input: {}", self.input);
-        println!("Expected 1: {}", self.expected1);
-        println!("Expected 2: {}", self.expected2);
     }
 }
