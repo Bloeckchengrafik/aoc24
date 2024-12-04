@@ -41,6 +41,7 @@ fn main() {
     matcher!(args.day, args.test, content, {
         1 => days::dec1::DecemberFirst,
         2 => days::dec2::DecemberSecond,
-        3 => days::dec3::DecemberThird
+        3 => days::dec3::DecemberThird,
+        4 => days::dec4::DecemberFourth
     });
 }
