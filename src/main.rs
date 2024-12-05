@@ -10,10 +10,6 @@ struct Args {
     /// The day to run
     #[arg(short, long)]
     day: u8,
-
-    /// Whether to test the solution or run it
-    #[arg(short, long, default_value = "false")]
-    test: bool,
 }
 
 fn load_content(name: String) -> String {
@@ -22,26 +18,49 @@ fn load_content(name: String) -> String {
 }
 
 macro_rules! matcher {
-    ($day:expr, $test:expr, $content:expr, { $($key:expr => $module:ty),* }) => {
-        match $day {
-            $($key => if ($test) {<$module as Aoc>::test($content)} else {<$module as Aoc>::run($content)},)*
+    ({ $($key:literal => $module:ty, $name:ident, $exp1:literal, $exp2:literal),* $(,)? }) => {
+fn run_day(day: u8, content: String) {
+        match day {
+            $($key => {<$module as Aoc>::run(content)},)*
             _ => panic!("Day not implemented"),
+        }
+}
+
+        #[cfg(test)]
+        mod tests {
+            pub use super::*;
+            $(
+                #[cfg(test)]
+                mod $name {
+                    use super::*;
+                    #[test]
+                    fn part1() {
+                        let content = load_content(format!("{}_test1", $key));
+                        <$module as Aoc>::test_1(content, $exp1.to_string());
+                    }
+
+                    #[test]
+                    fn part2() {
+                        let content = load_content(format!("{}_test2", $key));
+                        <$module as Aoc>::test_2(content, $exp2.to_string());
+                    }
+                }
+            )*
         }
     };
 }
 
+
+matcher!({
+        1 => days::dec1::DecemberFirst, dec1, "11", "31",
+        2 => days::dec2::DecemberSecond, dec2, "2", "4",
+        3 => days::dec3::DecemberThird, dec3, "161", "48",
+        4 => days::dec4::DecemberFourth, dec4, "18", "9",
+});
+
+
 fn main() {
     let args = Args::parse();
-    let content = if args.test {
-        load_content(format!("{}_test", args.day))
-    } else {
-        load_content(args.day.to_string())
-    };
-
-    matcher!(args.day, args.test, content, {
-        1 => days::dec1::DecemberFirst,
-        2 => days::dec2::DecemberSecond,
-        3 => days::dec3::DecemberThird,
-        4 => days::dec4::DecemberFourth
-    });
+    let content = load_content(args.day.to_string());
+    run_day(args.day, content);
 }

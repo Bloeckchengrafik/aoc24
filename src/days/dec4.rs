@@ -79,15 +79,3 @@ impl AocDay for DecemberFourth {
         all.to_string()
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn dec4_part2() {
-        let content = "M.S\n.A.\nM.S".to_string();
-        let day = DecemberFourth::new(content);
-        assert_eq!(day.part2(), "1");
-    }
-}

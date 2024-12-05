@@ -1,4 +1,4 @@
 /target
 .idea
 inputs/*
-!inputs/*_test.txt
+!inputs/*_test*.txt
