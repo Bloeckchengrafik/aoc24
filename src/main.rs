@@ -57,6 +57,7 @@ matcher!({
         3 => days::dec3::DecemberThird, dec3, "161", "48",
         4 => days::dec4::DecemberFourth, dec4, "18", "9",
         5 => days::dec5::DecemberFifth, dec5, "143", "123",
+        6 => days::dec6::DecemberSixth, dec6, "41", "6",
 });
 
 
