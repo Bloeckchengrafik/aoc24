@@ -1,5 +1,9 @@
+#![feature(test)]
+
 use crate::runner::Aoc;
 use clap::Parser;
+
+extern crate test;
 
 mod runner;
 pub mod days;
@@ -27,7 +31,7 @@ fn run_day(day: u8, content: String) {
 }
 
         #[cfg(test)]
-        mod tests {
+        mod stages {
             pub use super::*;
             $(
                 #[cfg(test)]
@@ -60,7 +64,7 @@ matcher!({
         6 => days::dec6::GuardGallivant, dec6, "41", "5",
         7 => days::dec7::BridgeRepair, dec7, "3749", "11387",
         8 => days::dec8::ResonantCollinearity, dec8, "14", "34",
-        9 => days::dec9::DiskFragmenter, dec9, "", "",
+        9 => days::dec9::DiskFragmenter, dec9, "1928", "2858",
 });
 
 

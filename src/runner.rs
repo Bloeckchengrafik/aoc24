@@ -20,11 +20,12 @@ impl <T> Aoc for T where T: AocDay {
         let part1start = std::time::Instant::now();
         let part1 = day.part1();
         let part1end = std::time::Instant::now();
+        println!("{} Part 1: {} ({}ms)", ANSI_GREEN_PLUS, part1, part1end.duration_since(part1start).as_millis());
+
         let part2start = std::time::Instant::now();
         let part2 = day.part2();
         let part2end = std::time::Instant::now();
 
-        println!("{} Part 1: {} ({}ms)", ANSI_GREEN_PLUS, part1, part1end.duration_since(part1start).as_millis());
         println!("{} Part 2: {} ({}ms)", ANSI_GREEN_PLUS, part2, part2end.duration_since(part2start).as_millis());
     }
 
