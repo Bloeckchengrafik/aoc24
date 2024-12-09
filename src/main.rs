@@ -52,14 +52,15 @@ fn run_day(day: u8, content: String) {
 
 
 matcher!({
-        1 => days::dec1::DecemberFirst, dec1, "11", "31",
-        2 => days::dec2::DecemberSecond, dec2, "2", "4",
-        3 => days::dec3::DecemberThird, dec3, "161", "48",
-        4 => days::dec4::DecemberFourth, dec4, "18", "9",
-        5 => days::dec5::DecemberFifth, dec5, "143", "123",
-        6 => days::dec6::DecemberSixth, dec6, "41", "5",
-        7 => days::dec7::DecemberSeventh, dec7, "3749", "11387",
-        8 => days::dec8::DecemberEighth, dec8, "14", "34",
+        1 => days::dec1::HistorianHysteria, dec1, "11", "31",
+        2 => days::dec2::RedNosedReports, dec2, "2", "4",
+        3 => days::dec3::MullItOver, dec3, "161", "48",
+        4 => days::dec4::CeresSearch, dec4, "18", "9",
+        5 => days::dec5::PrintQueue, dec5, "143", "123",
+        6 => days::dec6::GuardGallivant, dec6, "41", "5",
+        7 => days::dec7::BridgeRepair, dec7, "3749", "11387",
+        8 => days::dec8::ResonantCollinearity, dec8, "14", "34",
+        9 => days::dec9::DiskFragmenter, dec9, "", "",
 });
 
 

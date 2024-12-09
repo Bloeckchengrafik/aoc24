@@ -94,12 +94,12 @@ impl PageUpdate {
     }
 }
 
-pub struct DecemberFifth {
+pub struct PrintQueue {
     rules: Vec<PageRule>,
     updates: Vec<PageUpdate>,
 }
 
-impl AocDay for DecemberFifth {
+impl AocDay for PrintQueue {
     fn new(content: String) -> Self {
         let mut lines = content.lines();
         let mut rules = Vec::new();

@@ -47,13 +47,13 @@ impl ReportLine {
     }
 }
 
-pub struct DecemberSecond {
+pub struct RedNosedReports {
     lines: Vec<ReportLine>
 }
 
-impl AocDay for DecemberSecond {
+impl AocDay for RedNosedReports {
     fn new(content: String) -> Self {
-        DecemberSecond {
+        RedNosedReports {
             lines: content.lines().map(|x| ReportLine::from(x.to_string())).collect()
         }
     }

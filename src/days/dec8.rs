@@ -124,13 +124,13 @@ impl Debug for Map {
 }
 
 
-pub struct DecemberEighth {
+pub struct ResonantCollinearity {
     maps: Vec<Map>,
 }
 
-impl AocDay for DecemberEighth {
+impl AocDay for ResonantCollinearity {
     fn new(content: String) -> Self {
-        DecemberEighth {
+        ResonantCollinearity {
             maps: Map::all_from(&content),
         }
     }

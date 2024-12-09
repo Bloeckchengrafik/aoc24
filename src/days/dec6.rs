@@ -164,9 +164,9 @@ impl Display for Guard {
     }
 }
 
-pub struct DecemberSixth(Guard);
+pub struct GuardGallivant(Guard);
 
-impl DecemberSixth {
+impl GuardGallivant {
     fn check_loop(guard: &mut Guard, mut positions: Vec<Vec<Vec<Direction>>>) -> bool {
         assert_eq!((&guard).next_tile(), Tile::Wall, "Next tile is not wall");
 
@@ -194,10 +194,10 @@ impl DecemberSixth {
     }
 }
 
-impl AocDay for DecemberSixth {
+impl AocDay for GuardGallivant {
     fn new(content: String) -> Self {
         let guard = Guard::from(content);
-        DecemberSixth(guard)
+        GuardGallivant(guard)
     }
 
     fn part1(&self) -> String {

@@ -112,13 +112,13 @@ impl Equation {
     }
 }
 
-pub struct DecemberSeventh {
+pub struct BridgeRepair {
     equations: Vec<Equation>,
 }
 
-impl AocDay for DecemberSeventh {
+impl AocDay for BridgeRepair {
     fn new(content: String) -> Self {
-        DecemberSeventh {
+        BridgeRepair {
             equations: content.lines().map(|x| Equation::from(x)).collect()
         }
     }

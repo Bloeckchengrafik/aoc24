@@ -13,12 +13,12 @@ impl Mul {
     }
 }
 
-pub struct DecemberThird {
+pub struct MullItOver {
     content: String,
 }
 
 
-impl AocDay for DecemberThird {
+impl AocDay for MullItOver {
     fn new(content: String) -> Self {
         Self { content }
     }

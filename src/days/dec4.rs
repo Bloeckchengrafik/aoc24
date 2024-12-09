@@ -1,9 +1,9 @@
 use crate::runner::AocDay;
 
 // cross-word puzzle
-pub struct DecemberFourth(Vec<Vec<char>>);
+pub struct CeresSearch(Vec<Vec<char>>);
 
-impl DecemberFourth {
+impl CeresSearch {
     fn recurse_find(&self, x: i32, y: i32, chars_left: &str, dx: i32, dy: i32) -> i32 {
         if chars_left.len() == 0 {
             return 1;
@@ -64,7 +64,7 @@ impl DecemberFourth {
     }
 }
 
-impl AocDay for DecemberFourth {
+impl AocDay for CeresSearch {
     fn new(content: String) -> Self {
         Self(content.lines().map(|x| x.chars().collect()).collect())
     }

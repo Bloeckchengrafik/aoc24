@@ -1,11 +1,11 @@
 use crate::runner::AocDay;
 
-pub struct DecemberFirst {
+pub struct HistorianHysteria {
     left: Vec<i32>,
     right: Vec<i32>,
 }
 
-impl AocDay for DecemberFirst {
+impl AocDay for HistorianHysteria {
     fn new(content: String) -> Self {
         let mut left = Vec::new();
         let mut right = Vec::new();
@@ -15,7 +15,7 @@ impl AocDay for DecemberFirst {
             right.push(parts.next().unwrap().parse().unwrap());
         }
 
-        DecemberFirst {
+        HistorianHysteria {
             left,
             right,
         }
