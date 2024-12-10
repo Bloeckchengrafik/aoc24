@@ -65,6 +65,7 @@ matcher!({
         7 => days::dec7::BridgeRepair, dec7, "3749", "11387",
         8 => days::dec8::ResonantCollinearity, dec8, "14", "34",
         9 => days::dec9::DiskFragmenter, dec9, "1928", "2858",
+        10 => days::dec10::HoofIt, dec10, "36", "81",
 });
 
 

@@ -1,4 +1,3 @@
-use std::cmp::max;
 use std::fmt::{Debug, Formatter};
 use crate::runner::AocDay;
 
