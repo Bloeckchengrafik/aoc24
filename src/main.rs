@@ -67,6 +67,7 @@ matcher!({
         9 => days::dec9::DiskFragmenter, dec9, "1928", "2858",
         10 => days::dec10::HoofIt, dec10, "36", "81",
         11 => days::dec11::PlutonianPebbles, dec11, "55312", "149161030616311",
+        12 => days::dec12::GardenGroups, dec12, "140", "368",
 });
 
 
