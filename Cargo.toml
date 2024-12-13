@@ -5,5 +5,9 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.5.21", features = ["derive"] }
-regex = "1.11.1"
+regex = { version = "1.11.1", features = [] }
 anyhow = "1.0.94"
+lazy_static = "1.5.0"
+ndarray = "0.16.1"
+nalgebra = "0.33.2"
+z3 = "0.12.1"

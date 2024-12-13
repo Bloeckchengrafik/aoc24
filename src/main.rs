@@ -68,6 +68,7 @@ matcher!({
         10 => days::dec10::HoofIt, dec10, "36", "81",
         11 => days::dec11::PlutonianPebbles, dec11, "55312", "149161030616311",
         12 => days::dec12::GardenGroups, dec12, "140", "368",
+        13 => days::dec13::ClawContraption, dec13, "480", "875318608908",
 });
 
 
