@@ -3,7 +3,7 @@ use lazy_static::lazy_static;
 use regex::Regex;
 use std::cmp::{Ordering, PartialOrd};
 use std::collections::HashMap;
-use std::ops::{Deref, Mul};
+use std::ops::Deref;
 use z3::ast::{Ast, Int};
 use z3::SatResult;
 
@@ -67,7 +67,7 @@ impl Ord for Vec2 {
 fn solve_linear_equations(a1: i64, b1: i64, c1: i64, a2: i64, b2: i64, c2: i64) -> Option<(i64, i64)> {
     let cfg = z3::Config::new();
     let ctx = z3::Context::new(&cfg);
-    let mut solver = z3::Optimize::new(&ctx);
+    let solver = z3::Optimize::new(&ctx);
     let x = Int::new_const(&ctx, "x");
     let y = Int::new_const(&ctx, "y");
 
