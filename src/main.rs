@@ -71,6 +71,7 @@ matcher!({
         12 => days::dec12::GardenGroups, dec12, "140", "368",
         13 => days::dec13::ClawContraption, dec13, "480", "875318608908",
         14 => days::dec14::RestroomRedoubt, dec14, "12", "0",
+        15 => days::dec15::WarehouseWoes, dec15, "10092", "0",
 });
 
 

@@ -1,4 +1,5 @@
 pub mod term;
+pub mod direction;
 
 use std::fmt::Debug;
 use std::ops::{Add, AddAssign, Mul, Rem};
@@ -60,16 +61,15 @@ impl Add<&Vec2> for &Vec2 {
 }
 
 
-impl<T> Mul<T> for &Vec2<T>
-where
-    T: Copy + Mul<Output=T>,
+impl Mul<isize> for &Vec2<isize>
 {
-    type Output = Vec2<T>;
+    type Output = Vec2<isize>;
 
-    fn mul(self, rhs: T) -> Self::Output {
+    fn mul(self, rhs: isize) -> Self::Output {
         Vec2 { x: self.x * rhs, y: self.y * rhs }
     }
 }
+
 
 impl AddAssign<&Vec2> for Vec2 {
     fn add_assign(&mut self, rhs: &Vec2) {
