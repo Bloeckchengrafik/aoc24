@@ -125,8 +125,18 @@ impl Vec2 {
         ((self.x * self.x + self.y * self.y) as f64).sqrt()
     }
 
+    pub fn distance(&self, other: &Self) -> f64 {
+        let x = (self.x - other.x) as f64;
+        let y = (self.y - other.y) as f64;
+        (x * x + y * y).sqrt()
+    }
+
     pub fn manhattan_length(&self) -> isize {
         self.x.abs() + self.y.abs()
+    }
+
+    pub fn manhattan_distance(&self, other: &Self) -> isize {
+        (self.x.abs_diff(other.x) + self.y.abs_diff(other.x)) as isize
     }
 
     pub fn rotate(&self, degrees: isize) -> Self {
@@ -134,6 +144,15 @@ impl Vec2 {
         let x = (self.x as f64 * radians.cos() - self.y as f64 * radians.sin()).round() as isize;
         let y = (self.x as f64 * radians.sin() + self.y as f64 * radians.cos()).round() as isize;
         Self { x, y }
+    }
+
+    pub fn move_towards(&self, direction: direction::Direction) -> Self {
+        let vec = direction.to_point();
+        self + vec
+    }
+
+    pub fn zero() -> Self {
+        Self { x: 0, y: 0 }
     }
 }
 

@@ -41,4 +41,26 @@ impl Direction {
             Self::Right => Vec2::new(1, 0),
         }
     }
+
+    pub fn iter() -> impl Iterator<Item = Self> {
+        [Self::Up, Self::Down, Self::Left, Self::Right].iter().copied()
+    }
+
+    pub fn iter_forwards_from(&self) -> impl Iterator<Item = Self> {
+        match self {
+            Self::Up => [Self::Up, Self::Right, Self::Left].iter().copied(),
+            Self::Down => [Self::Down, Self::Right, Self::Left].iter().copied(),
+            Self::Left => [Self::Left, Self::Up, Self::Down].iter().copied(),
+            Self::Right => [Self::Right, Self::Up, Self::Down].iter().copied(),
+        }
+    }
+
+    pub fn orthogonal(&self) -> [Direction; 2] {
+        match self {
+            Self::Up => [Self::Right, Self::Left],
+            Self::Down => [Self::Right, Self::Left],
+            Self::Left => [Self::Up, Self::Down],
+            Self::Right => [Self::Up, Self::Down],
+        }
+    }
 }
